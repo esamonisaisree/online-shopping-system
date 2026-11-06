@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase - Online Shopping</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>ShopEase</h1>
+
+    <nav>
+        <button onclick="showSection('productsSection')">Products</button>
+        <button onclick="showCart()">My Cart</button>
+        <button onclick="showOrders()">My Orders</button>
+        <button onclick="showSection('loginSection')">Login</button>
+        <button onclick="logout()">Logout</button>
+        <button onclick="showSection('adminSection')">Admin</button>
+    </nav>
+</header>
+
+<main>
+
+    <!-- HOME SECTION -->
+    <section id="homeSection">
+        <h2>Welcome to ShopEase</h2>
+        <p>Your one-stop destination for online shopping.</p>
+        <button onclick="showSection('productsSection')">Shop Now</button>
+    </section>
+
+    <!-- REGISTRATION SECTION -->
+    <section id="registerSection">
+        <h2>Create Account</h2>
+
+        <input id="registerName" placeholder="Full Name">
+        <input id="registerEmail" type="email" placeholder="Email">
+        <input id="registerPassword" type="password" placeholder="Password">
+
+        <button onclick="register()">Register</button>
+    </section>
+
+    <!-- LOGIN SECTION -->
+    <section id="loginSection">
+        <h2>Customer / Admin Login</h2>
+
+        <input id="loginEmail" type="email" placeholder="Email">
+        <input id="loginPassword" type="password" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+
+        <p>
+            New customer?
+            <a href="#" onclick="showSection('registerSection')">
+                Create an account
+            </a>
+        </p>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section id="productsSection">
+        <h2>Our Products</h2>
+
+        <input
+            id="searchInput"
+            placeholder="Search products..."
+            oninput="loadProducts()"
+        >
+
+        <div id="productsList" class="product-grid"></div>
+    </section>
+
+    <!-- SHOPPING CART SECTION -->
+    <section id="cartSection">
+        <h2>Shopping Cart</h2>
+
+        <div id="cartItems"></div>
+
+        <h3 id="cartTotal">Total: ₹0</h3>
+
+        <button onclick="checkout()">Place Order</button>
+    </section>
+
+    <!-- ORDER HISTORY SECTION -->
+    <section id="ordersSection">
+        <h2>My Orders</h2>
+
+        <div id="ordersList"></div>
+    </section>
+
+    <!-- ADMIN SECTION -->
+    <section id="adminSection">
+        <h2>Admin Dashboard</h2>
+
+        <h3>Add Product</h3>
+
+        <input id="productName" placeholder="Product Name">
+        <input id="productDescription" placeholder="Description">
+        <input id="productPrice" type="number" placeholder="Price">
+        <input id="productStock" type="number" placeholder="Stock">
+
+        <button onclick="addProduct()">Add Product</button>
+
+        <h3>Manage Products</h3>
+
+        <div id="adminProducts"></div>
+    </section>
+
+    <p id="message"></p>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
