@@ -44,6 +44,7 @@ async function register() {
 
 // CUSTOMER / ADMIN LOGIN
 async function login() {
+    console.log('LOGIN FUNCTION CALLED');
     const response = await fetch('/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

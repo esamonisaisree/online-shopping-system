@@ -5,8 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "node --check server.js",
-    "start": "node server.js"
-  },
+    "start": "node server.js",
+    "test:selenium": "node selenium-tests/dashboard.test.js && node selenium-tests/auth.test.js && node selenium-tests/products.test.js && node selenium-tests/cart.test.js && node selenium-tests/checkout.test.js && node selenium-tests/orders.test.js && node selenium-tests/admin.test.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -19,5 +20,8 @@
   },
   "allowScripts": {
     "sqlite3@6.0.1": true
+  },
+  "devDependencies": {
+    "selenium-webdriver": "^4.52.0"
   }
 }
